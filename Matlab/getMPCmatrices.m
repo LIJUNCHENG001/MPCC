@@ -51,7 +51,8 @@ for i = 1:MPC_vars.N
     % linearized dynamics
     [stage(i).Ak,stage(i).Bk,stage(i).gk] = getEqualityConstraints(Xk,Uk,MPC_vars,ModelParams);
     % linearized track constraints
-    [stage(i).Ck, stage(i).ug, stage(i).lg] = getInequalityConstraints(borders(max(i-1,1),:),MPC_vars,ModelParams);
+    %[stage(i).Ck, stage(i).ug, stage(i).lg] = getInequalityConstraints(borders(max(i-1,1),:),MPC_vars,ModelParams);
+
     % bounds
     [stage(i).lb, stage(i).ub] = getBounds(MPC_vars,ModelParams);
 end
@@ -65,7 +66,8 @@ stage(i).Rk = costScale*2*diag([MPC_vars.rdD; MPC_vars.rdDelta; MPC_vars.rdVthet
 % linear state(-input) cost
 stage(i).fk = costScale*generatef(traj,MPC_vars,ModelParams,Xk,i);
 % linearized track constraints
-[stage(i).Ck, stage(i).ug, stage(i).lg] = getInequalityConstraints(borders(i-1,:),MPC_vars,ModelParams);
+%[stage(i).Ck, stage(i).ug, stage(i).lg] = getInequalityConstraints(borders(i-1,:),MPC_vars,ModelParams);
+
 % bounds
 [stage(i).lb, stage(i).ub] = getBounds(MPC_vars,ModelParams);
 %% Call solver interface

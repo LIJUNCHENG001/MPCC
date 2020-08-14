@@ -32,16 +32,16 @@ trackCenterline = TrackCenter;
 N_Track = length(TrackX);
 
 % length of local search region
-N_searchRegion = 4;
+N_searchRegion = 26;
 searchRegion = zeros(1,N_searchRegion);
 % determin index which are investigated
 k = 1;
-for i = last_closestIdx-1:last_closestIdx+2
+for i = last_closestIdx-5:last_closestIdx+20
     searchRegion(k) = i;
     k = k+1;
 end
 % wrapping if necessary
-if last_closestIdx > N_Track - 2 || last_closestIdx <= 1
+if last_closestIdx > N_Track - 20 || last_closestIdx <= 5
     i = find(searchRegion < 1);
     k = find(searchRegion > N_Track);
     searchRegion(i) = N_Track+searchRegion(i);

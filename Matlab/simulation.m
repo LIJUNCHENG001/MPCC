@@ -35,11 +35,13 @@ Ts = MPC_vars.Ts;
 % use normal ORCA Track
 load Tracks/track2.mat
 % use RCP track
-% load Tracks/trackMobil.mat
-% track2 = trackMobil;
+%load Tracks/trackMobil.mat
+%load m_track.mat
+%track2 = m_track;
 % shrink track by half of the car widht plus safety margin
 % TODO implement orientation depending shrinking in the MPC constraints
-safteyScaling = 1.5;
+% safteyScaling = 1.5;
+safteyScaling = 1.2;
 [track,track2] = borderAdjustment(track2,ModelParams,safteyScaling);
 
 trackWidth = norm(track.inner(:,1)-track.outer(:,1));
@@ -59,8 +61,8 @@ QP_iter = 2;
 % number of cars 
 % there are two examples one with no other cars and one with 4 other cars
 % (inspired by the set up shown in the paper)
-% n_cars = 1; % no other car
-n_cars = 5; % 4 other cars
+ n_cars = 1; % no other car
+% n_cars = 5; % 4 other cars
 %% Fit spline to track
 % TODO spline function only works with regular spaced points.
 % Fix add function which given any center line and bound generates equlally

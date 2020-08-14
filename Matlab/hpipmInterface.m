@@ -69,11 +69,11 @@ for i = 0:N
     end
 end
 %% Constraints
-for i = 1:N
-    qp.set('C', stage(i+1).Ck, i);
-    qp.set('lg', stage(i+1).lg, i); 
-    qp.set('ug', stage(i+1).ug, i); 
-end
+% for i = 1:N
+%     qp.set('C', stage(i+1).Ck, i);
+%     qp.set('lg', stage(i+1).lg, i); 
+%     qp.set('ug', stage(i+1).ug, i); 
+% end
 %% Bounds
 %qp.print_C_struct();
 for i = 0:N

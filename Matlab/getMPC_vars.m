@@ -58,15 +58,16 @@ if CarModel == "ORCA"
     %                     3, 3, 10,   4, 2, 7,  30,     1, 0.35,5  ,   1 , 1, 5]'; 
     % bounds for nomalized state-inputs (bounds can be changed by changing
     % % normalization)
-    MPC_vars.bounds = [-1,-1,-3, 0,-1,-1,   0,  -0.1,-1,0  ,  -1 ,-1,-5;
-                        1, 1, 3, 1, 1, 1,   1,     1, 1,1  ,   1 , 1, 5]'; 
+    MPC_vars.bounds = [-100,-100,-3, 0,-1,-1,   0,  -0.1,-1,0  ,  -1 ,-1,-5;
+                        100, 100, 3, 1, 1, 1,   1,     1, 1,1  ,   1 , 1, 5]'; 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Cost Parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    MPC_vars.qC = 0.1; % contouring cost
-    MPC_vars.qCNmult= 10; % increase of terminal contouring cost
-    MPC_vars.qL= 1000; % lag cost
+    %MPC_vars.qC = 0.1; % contouring cost
+    MPC_vars.qC = 10; % contouring cost
+    MPC_vars.qCNmult= 100; % increase of terminal contouring cost
+    MPC_vars.qL= 100; % lag cost
     MPC_vars.qVtheta= 0.02; % theta maximization cost
     MPC_vars.qOmega = 1e-5; % yaw rate regularization cost
     MPC_vars.qOmegaNmult = 10; % yaw rate regularization cost
