@@ -170,9 +170,11 @@ ConstrainsMatrix Constraints::getConstraints(const ArcLengthSpline &track,const 
     d_MPC dl_constrains_matrix;
     d_MPC du_constrains_matrix;
 
+    /*
     C_constrains_matrix.row(si_index.con_track) = track_constraints.C_i;
     dl_constrains_matrix(si_index.con_track) = track_constraints.dl_i;
     du_constrains_matrix(si_index.con_track) = track_constraints.du_i;
+    */
 
     C_constrains_matrix.row(si_index.con_tire) = tire_constraints_rear.C_i;
     dl_constrains_matrix(si_index.con_tire) = tire_constraints_rear.dl_i;

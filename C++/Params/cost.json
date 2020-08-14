@@ -1,7 +1,7 @@
 
 {
-  "qC" : 0.1,
-  "qL" : 500.0,
+  "qC" : 10,
+  "qL" : 100.0,
   "qVs" : 0.02,
 
   "qMu": 0.001,
@@ -19,7 +19,7 @@
   "rdDelta" : 5E-3,
   "rdVs" : 1E-5,
 
-  "qCNmult": 10,
+  "qCNmult": 100,
   "qRNmult": 10,
 
   "sc_quad_track": 100.0,

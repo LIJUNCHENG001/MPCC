@@ -56,9 +56,9 @@ struct StateInputIndex{
     int dDelta = 1;
     int dVs = 2;
 
-    int con_track = 0;
-    int con_tire = 1;
-    int con_alpha = 2;
+    //int con_track = 0;
+    int con_tire = 0;
+    int con_alpha = 1;
 };
 
 static const StateInputIndex si_index;
